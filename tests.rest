@@ -1,0 +1,25 @@
+POST http://localhost:8000/api/signup
+Content-Type: application/json
+
+{
+    "name":"Doug",
+    "email":"dougiehawes42@gmail.com",
+    "password":"rrrrrr"
+}
+
+###
+POST http://localhost:8000/api/account-activation
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRG91Z2llIEhhd2VzIiwiZW1haWwiOiJkb3VnaWVoYXdlc0Bob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaWF0IjoxNTc5MDkxNDU2LCJleHAiOjE1NzkwOTIwNTZ9.zVjFY5_7e2XuQIVmDO-bV3Vf4SCcnP1bBVe3Jk9Lvh8"
+}
+
+###
+POST http://localhost:8000/api/signin
+Content-Type: application/json
+
+{
+   "email":"dougiehawes42@gmail.com",
+   "password":"rrrrrr"
+}

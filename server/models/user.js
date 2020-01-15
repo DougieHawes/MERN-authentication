@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
-
+// user schema
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -13,8 +13,8 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
       required: true,
-      lowercase: true,
-      unique: true
+      unique: true,
+      lowercase: true
     },
     hashed_password: {
       type: String,
@@ -44,10 +44,12 @@ userSchema
     return this._password;
   });
 
+// methods
 userSchema.methods = {
   authenticate: function(plainText) {
-    return this.encryptPassword(plainText) === this.hashed_password;
+    return this.encryptPassword(plainText) === this.hashed_password; // true false
   },
+
   encryptPassword: function(password) {
     if (!password) return '';
     try {
@@ -59,9 +61,10 @@ userSchema.methods = {
       return '';
     }
   },
+
   makeSalt: function() {
     return Math.round(new Date().valueOf() * Math.random()) + '';
   }
 };
 
-module.export = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
