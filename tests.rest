@@ -12,7 +12,7 @@ POST http://localhost:8000/api/account-activation
 Content-Type: application/json
 
 {
-    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRG91Z2llIEhhd2VzIiwiZW1haWwiOiJkb3VnaWVoYXdlc0Bob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaWF0IjoxNTc5MDkxNDU2LCJleHAiOjE1NzkwOTIwNTZ9.zVjFY5_7e2XuQIVmDO-bV3Vf4SCcnP1bBVe3Jk9Lvh8"
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTFmMWZkYzU5NjdkZTM2ZTgwMTdjNTgiLCJpYXQiOjE1NzkxNjk0NDMsImV4cCI6MTU3OTc3NDI0M30.TKJyR43Y-DRL3wW7el_Nu1FlsrNfOObWVP8YP6hl6f0"
 }
 
 ###
@@ -21,5 +21,41 @@ Content-Type: application/json
 
 {
    "email":"dougiehawes42@gmail.com",
-   "password":"rrrrrr"
+   "password":"123456"
+}
+
+###
+GET http://localhost:8000/api/user/5e1f1fdc5967de36e8017c58
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTFmMWZkYzU5NjdkZTM2ZTgwMTdjNTgiLCJpYXQiOjE1NzkxOTQ0NzEsImV4cCI6MTU3OTc5OTI3MX0.C0EH8BBASwfqlZNuV7V2elJ9_aDsrzsrc9O26Rc5YkI
+
+###
+PUT http://localhost:8000/api/user/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTFmMWZkYzU5NjdkZTM2ZTgwMTdjNTgiLCJpYXQiOjE1NzkxOTQ0NzEsImV4cCI6MTU3OTc5OTI3MX0.C0EH8BBASwfqlZNuV7V2elJ9_aDsrzsrc9O26Rc5YkI
+
+###
+PUT http://localhost:8000/api/user/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTFmMWZkYzU5NjdkZTM2ZTgwMTdjNTgiLCJpYXQiOjE1NzkxOTQ0NzEsImV4cCI6MTU3OTc5OTI3MX0.C0EH8BBASwfqlZNuV7V2elJ9_aDsrzsrc9O26Rc5YkI
+
+{
+    "name":"Doug Hawes"
+}
+
+###
+PUT http://localhost:8000/api/forgot-password
+Content-Type: application/json
+
+{
+    "email":"dougiehawes42@gmail.com"
+}
+
+###
+PUT http://localhost:8000/api/reset-password
+Content-Type: application/json
+
+{
+    "newPassword":"654321",
+    "resetPasswordLink":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTFmMWZkYzU5NjdkZTM2ZTgwMTdjNTgiLCJpYXQiOjE1NzkyMTUyNDEsImV4cCI6MTU3OTIxNTg0MX0.7Bw1g7doHy2_mRqv54Ne2IXoUkEJUDo0X8MyDwDubvw"
 }

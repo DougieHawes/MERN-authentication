@@ -18,6 +18,7 @@ mongoose
   .catch(err => console.log('DB CONNECTION ERROR: ' + err));
 
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ if ((process.env.NODE_ENV = 'development')) {
 }
 
 app.use('/api', authRoutes);
+app.use('/api', userRoutes);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
